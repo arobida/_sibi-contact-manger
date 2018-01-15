@@ -5,6 +5,8 @@ const morgan = require('morgan');
 const path = require('path');
 const { Client } = require('pg');
 
+const creds = require('./creds');
+
 
 const normalizePort = port => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || 5000);
@@ -16,10 +18,10 @@ const dev = app.get('env') !== 'production';
 const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true,
-    user: 'dhdggbknkwmhba',
-    host: 'ec2-54-83-59-144.compute-1.amazonaws.com',
-    database: 'd6aljv0c03gp2r',
-    password: '2c0bc4abef295ead10104407d9d3d26b9640a87167fcb7bdb60c3cd65264a39d',
+    user: creds.userDb,
+    host: creds.hostDb,
+    database: creds.databaseDb,
+    password: creds.passwordDb,
     port: 5432,
 });
 
