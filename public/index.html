@@ -37,37 +37,38 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <canvas class="background"></canvas>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.1.0/particles.min.js"></script>
-    <script>
-      Particles.init({
-        selector: '.background',
-        // normal options
-        maxParticles: 450,
-        color: '#48F2E3',
-        connectParticles: false,
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.1.0/particles.min.js">
+      window.onload = function () {
+        Particles.init({
+          selector: '.background',
+          // normal options
+          maxParticles: 450,
+          color: '#48F2E3',
+          connectParticles: false,
 
-        // options for breakpoints
-        responsive: [{
-          breakpoint: 768,
-          options: {
-            maxParticles: 200,
-            color: '#48F2E3',
-            connectParticles: false
-          }
-        }, {
-          breakpoint: 425,
-          options: {
-            maxParticles: 100,
-            color: '#48F2E3',
-            connectParticles: false
-          }
-        }, {
-          breakpoint: 320,
-          options: {
-            maxParticles: 0 // disables particles.js
-          }
-        }]
-      });
+          // options for breakpoints
+          responsive: [{
+            breakpoint: 768,
+            options: {
+              maxParticles: 200,
+              color: '#48F2E3',
+              connectParticles: false
+            }
+          }, {
+            breakpoint: 425,
+            options: {
+              maxParticles: 100,
+              color: '#48F2E3',
+              connectParticles: false
+            }
+          }, {
+            breakpoint: 320,
+            options: {
+              maxParticles: 0 // disables particles.js
+            }
+          }]
+        });
+      }
     </script>
   </body>
 </html>
